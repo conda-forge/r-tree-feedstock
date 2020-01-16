@@ -23,17 +23,15 @@ requirements:
   build:
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('fortran') }}              # [not win]
-    - {{ compiler('m2w64_fortran') }}        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
     - {{posix}}coreutils         # [win]
     - {{posix}}zip               # [win]
   host:
-    - r-base
+    - r-base >=3.6.0
   run:
-    - r-base
+    - r-base >=3.6.0
     - {{native}}gcc-libs         # [win]
 
 test:
