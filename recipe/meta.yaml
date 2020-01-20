@@ -1,4 +1,4 @@
-{% set version = '1.0-39' %}
+{% set version = '1.0-40' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,21 +10,20 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tree_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tree/tree_{{ version }}.tar.gz
-  sha256: bd14d04d42fd5b3b2592498da5751219992f524b116037a9395cf90d03b54d60
+  sha256: ffab16382d7ed5b76529801ab26b4970363b2072231c6a87330326298ce626e7
 
 build:
   merge_build_host: True  # [win]
-  number: 1002
+  skip: True  # [r_base == "3.5.1"]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('fortran') }}        # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('m2w64_fortran') }}        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -46,30 +45,26 @@ about:
   license: GPL-2 | GPL-3
   summary: Classification and regression trees.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
 
 # Package: tree
 # Title: Classification and Regression Trees
-# Version: 1.0-39
-# Date: 2018-03-17
-# Depends: R (>= 2.15.0), grDevices, graphics, stats
+# Version: 1.0-40
+# Date: 2019-03-01
+# Depends: R (>= 3.6.0), grDevices, graphics, stats
 # Suggests: MASS
 # Authors@R: person("Brian", "Ripley", role = c("aut", "cre"), email = "ripley@stats.ox.ac.uk")
 # Description: Classification and regression trees.
 # License: GPL-2 | GPL-3
 # NeedsCompilation: yes
-# Packaged: 2018-03-17 06:57:28 UTC; ripley
+# Packaged: 2019-03-01 16:54:49 UTC; ripley
 # Author: Brian Ripley [aut, cre]
 # Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
 # Repository: CRAN
-# Date/Publication: 2018-03-17 17:33:11 UTC
+# Date/Publication: 2019-04-26 13:21:21 UTC
