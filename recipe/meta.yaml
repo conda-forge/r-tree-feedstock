@@ -1,4 +1,4 @@
-{% set version = '1.0-40' %}
+{% set version = "1.0-41" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tree_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tree/tree_{{ version }}.tar.gz
-  sha256: ffab16382d7ed5b76529801ab26b4970363b2072231c6a87330326298ce626e7
+  sha256: 21cf995b187d97de0bce8330973a52c46235db0fc09a133cad26283b7a6f5c8e
 
 build:
-  merge_build_host: True  # [win]
-  skip: True  # [r_base == "3.5.1"]
-  number: 1
+  merge_build_host: true  # [win]
+  skip: true  # [r_base == "3.5.1"]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -46,8 +46,8 @@ about:
   summary: Classification and regression trees.
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
