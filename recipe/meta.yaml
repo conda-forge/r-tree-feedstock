@@ -41,7 +41,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=tree
-  license: GPL-2 | GPL-3
+  license: GPL-2.0-or-later
   summary: Classification and regression trees.
   license_family: GPL3
   license_file:
