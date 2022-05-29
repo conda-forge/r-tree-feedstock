@@ -3,7 +3,7 @@ About r-tree
 
 Home: https://CRAN.R-project.org/package=tree
 
-Package license: GPL-2 | GPL-3
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-tree-feedstock/blob/main/LICENSE.txt)
 
