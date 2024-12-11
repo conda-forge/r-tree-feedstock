@@ -1,4 +1,4 @@
-{% set version = "1.0-43" %}
+{% set version = "1.0-44" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tree_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tree/tree_{{ version }}.tar.gz
-  sha256: 9b0a996d013cce4f457abdbdc54bd2f8f4dbe4ef0b33e0a53925509c509d5287
+  sha256: db694b5ff6843218315d4e21485d240ac510964a7acf8e684ac038cec44bf70f
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
