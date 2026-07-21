@@ -1,18 +1,18 @@
-{% set version = "1.0-45" %}
+{% set version = "1.0-46" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-tree
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace('-', '_') }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/tree_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tree/tree_{{ version }}.tar.gz
-  sha256: b397f593fbd7c063bc17ca1b6601088d01297d443d865bd8ea6ff9d3641c0697
+  sha256: 47aacbe66d9a839eb0623b126c3e48b6219e53c22217f244ffec2e1ecfbadb11
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
